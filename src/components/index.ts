@@ -10,4 +10,5 @@ export * from "./ListItem/ListItem";
 export * from "./RemainingCard/RemainingCard";
 export * from "./Search/Search";
 export * from "./SpentCard/SpentCard";
+export * from "./Submit/Submit";
 export * from "./Title/Title";

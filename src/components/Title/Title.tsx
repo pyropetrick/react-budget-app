@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Title = () => {
-  return <div>Title</div>;
+  return <h2>Title</h2>;
 };

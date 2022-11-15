@@ -1,5 +1,13 @@
-import React from "react";
+import { CustomSelect, Title, BudgetCard, RemainingCard, SpentCard } from "../";
 
 export const Budget = () => {
-  return <div>Budget</div>;
+  return (
+    <div>
+      <CustomSelect />
+      <Title />
+      <BudgetCard />
+      <RemainingCard />
+      <SpentCard />
+    </div>
+  );
 };

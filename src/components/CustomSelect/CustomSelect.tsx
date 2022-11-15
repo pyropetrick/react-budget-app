@@ -1,5 +1,5 @@
-import React from "react";
+import Select from "react-select";
 
 export const CustomSelect = () => {
-  return <div>CustomSelect</div>;
+  return <Select />;
 };

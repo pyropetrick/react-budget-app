@@ -1,5 +1,12 @@
-import React from "react";
+import { Title, Input, Submit } from "../";
 
 export const Form = () => {
-  return <div>Form</div>;
+  return (
+    <form>
+      <Title />
+      <Input />
+      <Input />
+      <Submit />
+    </form>
+  );
 };

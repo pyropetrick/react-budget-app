@@ -1,5 +1,11 @@
-import React from "react";
+import { Budget, Expenses, Form } from "./components";
 
 export const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <Budget />
+      <Expenses />
+      <Form />
+    </div>
+  );
 };
