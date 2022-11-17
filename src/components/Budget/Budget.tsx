@@ -4,7 +4,7 @@ export const Budget = () => {
   return (
     <div>
       <CustomSelect />
-      <Title />
+      <Title label="budget app" />
       <BudgetCard />
       <RemainingCard />
       <SpentCard />

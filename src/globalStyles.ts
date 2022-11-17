@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
 *,
 *::before,
 *::after {
@@ -60,7 +60,7 @@ position: relative;
 height: 100vh;
 }
 body {
-  background-color: #EAF2F2;
+  background-color: #f4f4f4;
   font-family: 'Playfair Display', serif;
 }
 `;
