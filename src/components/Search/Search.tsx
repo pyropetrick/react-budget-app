@@ -1,5 +1,7 @@
-import React from "react";
+import { useExpenses } from "../../context";
 
 export const Search = () => {
-  return <input />;
+  const expense = useExpenses();
+
+  return <input type="search" />;
 };

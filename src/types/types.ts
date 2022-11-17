@@ -1,6 +1,7 @@
 export interface IExpense {
-  title: string;
+  name: string;
   price: number;
+  id: string;
 }
 export interface IBudgetContext {
   budget: number;
@@ -10,7 +11,7 @@ export interface IBudgetContext {
 }
 export interface IExpenseContext {
   expenses: IExpense[];
-  setExpenses: (value: IExpense[]) => void;
+  setExpenses: (value: any) => any;
 }
 export interface IFormContext {
   name: string;
@@ -21,4 +22,9 @@ export interface IFormContext {
 export interface ISelectOption {
   value: string;
   label: string;
+}
+
+export interface IFormData {
+  name: string;
+  price: number;
 }

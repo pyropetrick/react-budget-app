@@ -4,7 +4,6 @@ export * from "./BudgetCard/BudgetCard";
 export * from "./CustomSelect/CustomSelect";
 export * from "./Expenses/Expenses";
 export * from "./Form/Form";
-export * from "./Input/Input";
 export * from "./List/List";
 export * from "./ListItem/ListItem";
 export * from "./RemainingCard/RemainingCard";
