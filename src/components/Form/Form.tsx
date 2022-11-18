@@ -6,12 +6,9 @@ import { v4 as uuidv4 } from "uuid";
 
 export const Form = () => {
   const { register, handleSubmit } = useForm<IFormData>();
-  const expense = useExpenses();
+  const { setNewExpense } = useExpenses();
   const onSubmit: SubmitHandler<IFormData> = ({ name, price }) => {
-    expense?.setExpenses((value: any): any => [
-      ...value,
-      { name, price, id: uuidv4() },
-    ]);
+    setNewExpense({ name, price, id: uuidv4() });
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

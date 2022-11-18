@@ -1,5 +1,7 @@
 import { createContext, useContext } from "react";
 import { IBudgetContext } from "../../types/types";
 
-export const BudgetContext = createContext<IBudgetContext | null>(null);
+export const BudgetContext = createContext<IBudgetContext>(
+  {} as IBudgetContext
+);
 export const useBudget = () => useContext(BudgetContext);

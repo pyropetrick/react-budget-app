@@ -4,7 +4,7 @@ import { useBudget } from "../../context";
 import { ISelectOption } from "../../types/types";
 
 export const CustomSelect = () => {
-  const budget = useBudget();
+  const { setCurrency, currency } = useBudget();
   const options: ISelectOption[] = [
     { value: Currency.BYN, label: "BYN" },
     { value: Currency.USD, label: "USD" },
@@ -16,11 +16,11 @@ export const CustomSelect = () => {
   const handleSelect = (
     newValue: OnChangeValue<ISelectOption, boolean>,
     actionMeta: ActionMeta<ISelectOption>
-  ) => budget?.setCurrency((newValue as ISelectOption).value);
+  ) => setCurrency((newValue as ISelectOption).value);
   return (
     <Select
       options={options}
-      value={getValue(budget?.currency)}
+      value={getValue(currency)}
       onChange={handleSelect}
     />
   );

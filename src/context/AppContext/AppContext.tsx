@@ -1,16 +1,12 @@
-import { ReactNode } from "react";
 import {
   AppContext,
   BudgetContextProvider,
   ExpensesContextProvider,
   FormContextProvider,
 } from "..";
+import { IChildrenContext } from "../../types/types";
 
-interface IProps {
-  children: ReactNode;
-}
-
-export const AppContextProvider = ({ children }: IProps) => {
+export const AppContextProvider = ({ children }: IChildrenContext) => {
   return (
     <AppContext.Provider value={null}>
       <BudgetContextProvider>

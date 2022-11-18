@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface IExpense {
   name: string;
   price: number;
@@ -10,8 +12,11 @@ export interface IBudgetContext {
   setCurrency: (value: string) => void;
 }
 export interface IExpenseContext {
-  expenses: IExpense[];
-  setExpenses: (value: any) => any;
+  expenses: IExpense[] | [];
+  filteredExpense: IExpense[];
+  setNewExpense: (expense: IExpense) => void;
+  deleteExpense: (id: string) => void;
+  searchExpense: (name: string) => void;
 }
 export interface IFormContext {
   name: string;
@@ -27,4 +32,8 @@ export interface ISelectOption {
 export interface IFormData {
   name: string;
   price: number;
+}
+
+export interface IChildrenContext {
+  children: ReactNode;
 }

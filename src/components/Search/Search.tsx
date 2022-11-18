@@ -1,7 +1,10 @@
+import { ChangeEvent } from "react";
 import { useExpenses } from "../../context";
 
 export const Search = () => {
-  const expense = useExpenses();
+  const { searchExpense } = useExpenses();
 
-  return <input type="search" />;
+  const handleSearch = (event: ChangeEvent<HTMLInputElement>) => searchExpense(event.target.value);
+
+  return <input type="search" onChange={handleSearch} />;
 };

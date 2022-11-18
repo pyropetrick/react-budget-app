@@ -1,15 +1,15 @@
 import { useBudget } from "../../context";
 
 export const BudgetCard = () => {
-  const budget = useBudget();
+  const { setBudget, budget, currency } = useBudget();
   const handleInput = (event: any) => {
-    budget?.setBudget(event.target.value);
+    setBudget(event.target.value);
   };
-  if (budget?.budget)
+  if (budget)
     return (
       <div>
-        Budget: {budget.budget}
-        {budget.currency}
+        Budget: {budget}
+        {currency}
       </div>
     );
   return (
