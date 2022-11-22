@@ -1,10 +1,7 @@
-import { useCallback, useState } from "react";
+import { useState } from "react";
 
-export const useToogle = (initValue: boolean = false): [boolean, any] => {
+export const useToogle = (initValue: boolean = false): [value: boolean, toogle: () => void] => {
   const [value, setValue] = useState<boolean>(initValue);
-  const toogle = useCallback(
-    (): void => setValue((prevValue) => !prevValue),
-    []
-  );
+  const toogle = () => setValue((prevValue) => !prevValue);
   return [value, toogle];
 };

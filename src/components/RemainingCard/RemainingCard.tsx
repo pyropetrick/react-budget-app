@@ -1,9 +1,21 @@
+import { useBudget, useCurrencyContext } from "../../context";
 import { StyledRemainingCard } from "./styles";
 
 export const RemainingCard = () => {
-  const budget = 300;
-  if (!budget) {
-    return <StyledRemainingCard danger>Overspending by $100</StyledRemainingCard>;
+  const { currency } = useCurrencyContext();
+  const { remaining } = useBudget();
+  if (remaining < 0) {
+    return (
+      <StyledRemainingCard danger>
+        Overspending by {currency}
+        {Math.abs(remaining)}
+      </StyledRemainingCard>
+    );
   }
-  return <StyledRemainingCard>Remaining: {budget} </StyledRemainingCard>;
+  return (
+    <StyledRemainingCard>
+      Remaining: {currency}
+      {remaining}
+    </StyledRemainingCard>
+  );
 };

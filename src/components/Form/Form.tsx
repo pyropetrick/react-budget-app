@@ -1,15 +1,23 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Title, Submit } from "../";
-import { useExpenses } from "../../context";
+import { useBudget, useExpenses } from "../../context";
 import { IFormData } from "../../types/types";
-import { v4 as uuidv4 } from "uuid";
+import { v4 } from "uuid";
 import { StyledForm, StyledInputForm } from "./styles";
 
 export const Form = () => {
-  const { register, handleSubmit } = useForm<IFormData>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormData>();
   const { setNewExpense } = useExpenses();
+  const { setRemaining, setSpending } = useBudget();
   const onSubmit: SubmitHandler<IFormData> = ({ name, price }) => {
-    setNewExpense({ name, price, id: uuidv4() });
+    setNewExpense({ name, price, id: v4() });
+
+    setSpending(+price);
+    setRemaining();
   };
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>

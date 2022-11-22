@@ -1,4 +1,3 @@
-export * from "./Badge/Badge";
 export * from "./Budget/Budget";
 export * from "./BudgetCard/BudgetCard";
 export * from "./CustomSelect/CustomSelect";

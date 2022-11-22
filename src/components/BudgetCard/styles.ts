@@ -17,6 +17,7 @@ export const StyledInput = styled.input`
   background-color: transparent;
   color: black;
   font-size: 20px;
+  font-weight: 500;
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
   }
@@ -39,4 +40,5 @@ export const StyledButton = styled.button`
 
 export const StyledText = styled.p`
   font-size: 20px;
+  font-weight: 500;
 `;

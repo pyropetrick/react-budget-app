@@ -1,11 +1,9 @@
 import { ChangeEvent, useState } from "react";
 
-export const useInput = <T>(
-  initValue: T,
-): { value: T; onChange: (e: ChangeEvent<HTMLInputElement>) => void } => {
-  const [value, setValue] = useState<T>(initValue);
+export const useInput = (initValue: string = "") => {
+  const [value, setValue] = useState(initValue);
 
-  const onChange = (event: any) => setValue(event.target.value);
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value);
 
   return { value, onChange };
 };

@@ -10,6 +10,5 @@ export const StyledHead = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 120px;
   margin-bottom: 30px;
 `;

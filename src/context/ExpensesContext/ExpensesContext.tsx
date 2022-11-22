@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { useState } from "react";
 import { ExpensesContext } from "..";
 import { IChildrenContext, IExpense, IExpenseContext } from "../../types/types";
 
@@ -18,11 +18,11 @@ export const ExpensesContextProvider = ({ children }: IChildrenContext) => {
           expenses: ctx.expenses.filter((expense) => expense.id !== id),
         }));
       },
-      filteredExpense: [],
+      searchValue: "",
       searchExpense: (name) => {
         setExpensesContext((ctx) => ({
           ...ctx,
-          filteredExpense: ctx.expenses.filter((expense) => expense.name.includes(name)),
+          searchValue: name.toLowerCase(),
         }));
       },
     }));

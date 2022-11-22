@@ -11,5 +11,6 @@ export const StyledRemainingCard = styled.div`
   border-radius: 10px;
   padding: 15px 20px;
   font-size: 20px;
+  font-weight: 500;
   margin-bottom: 20px;
 `;

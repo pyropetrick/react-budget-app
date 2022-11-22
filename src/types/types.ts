@@ -7,11 +7,15 @@ export interface IExpense {
 }
 export interface IBudgetContext {
   budget: number;
+  remaining: number;
+  spending: number;
+  setRemaining: () => void;
+  setSpending: (value: number) => void;
   setBudget: (value: number) => void;
 }
 export interface IExpenseContext {
   expenses: IExpense[] | [];
-  filteredExpense: IExpense[];
+  searchValue: string;
   setNewExpense: (expense: IExpense) => void;
   deleteExpense: (id: string) => void;
   searchExpense: (name: string) => void;

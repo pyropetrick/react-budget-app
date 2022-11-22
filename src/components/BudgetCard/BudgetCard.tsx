@@ -1,25 +1,34 @@
 import { useBudget, useCurrencyContext } from "../../context";
+import { useInput } from "../../hooks/useInput";
 import { StyledBudgetCard, StyledButton, StyledInput, StyledText } from "./styles";
+import { useToogle } from "../../hooks/useToogle";
 
 export const BudgetCard = () => {
-  const { setBudget, budget } = useBudget();
+  const { setBudget, budget, setRemaining } = useBudget();
   const { currency } = useCurrencyContext();
-  const handleInput = (event: any) => {
-    setBudget(event.target.value);
+  const inputBudget = useInput();
+  const [isBudgetActive, setBudgetActive] = useToogle();
+  const handleSave = () => {
+    setBudget(+inputBudget.value);
+    setRemaining();
+    setBudgetActive();
   };
+  const handleEdit = () => setBudgetActive();
+
   return (
     <StyledBudgetCard>
-      {!budget ? (
+      {!isBudgetActive ? (
         <>
-          <StyledInput onKeyPress={handleInput} placeholder="Enter Budget ..." type="number" />
-          <StyledButton>Save</StyledButton>
+          <StyledInput {...inputBudget} placeholder="Enter Budget ..." type="number" />
+          <StyledButton onClick={handleSave}>Save</StyledButton>
         </>
       ) : (
         <>
           <StyledText>
-            Budget: {budget} {currency}
+            Budget: {currency}
+            {budget}
           </StyledText>
-          <StyledButton>Edit</StyledButton>
+          <StyledButton onClick={handleEdit}>Edit</StyledButton>
         </>
       )}
     </StyledBudgetCard>

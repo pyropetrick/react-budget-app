@@ -5,4 +5,5 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 30px 20px;
+  width: 500px;
 `;
