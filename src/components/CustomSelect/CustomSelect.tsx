@@ -2,6 +2,7 @@ import Select, { ActionMeta, OnChangeValue } from "react-select";
 import { Currency } from "../../config/currency";
 import { useBudget } from "../../context";
 import { ISelectOption } from "../../types/types";
+import { selectStyles } from "./styles";
 
 export const CustomSelect = () => {
   const { setCurrency, currency } = useBudget();
@@ -15,10 +16,11 @@ export const CustomSelect = () => {
     options.find((option) => option.value === value);
   const handleSelect = (
     newValue: OnChangeValue<ISelectOption, boolean>,
-    actionMeta: ActionMeta<ISelectOption>
+    actionMeta: ActionMeta<ISelectOption>,
   ) => setCurrency((newValue as ISelectOption).value);
   return (
     <Select
+      styles={selectStyles}
       options={options}
       value={getValue(currency)}
       onChange={handleSelect}

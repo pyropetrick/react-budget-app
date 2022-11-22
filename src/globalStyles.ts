@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 *,
 *::before,
 *::after {

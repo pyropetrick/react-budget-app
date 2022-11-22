@@ -1,24 +1,26 @@
 import { useBudget } from "../../context";
+import { StyledBudgetCard, StyledButton, StyledInput, StyledText } from "./styles";
 
 export const BudgetCard = () => {
   const { setBudget, budget, currency } = useBudget();
   const handleInput = (event: any) => {
     setBudget(event.target.value);
   };
-  if (budget)
-    return (
-      <div>
-        Budget: {budget}
-        {currency}
-      </div>
-    );
   return (
-    <div>
-      <input
-        onKeyPress={handleInput}
-        placeholder="Enter Budget"
-        type="number"
-      />
-    </div>
+    <StyledBudgetCard>
+      {!budget ? (
+        <>
+          <StyledInput onKeyPress={handleInput} placeholder="Enter Budget ..." type="number" />
+          <StyledButton>Save</StyledButton>
+        </>
+      ) : (
+        <>
+          <StyledText>
+            Budget: {budget} {currency}
+          </StyledText>
+          <StyledButton>Edit</StyledButton>
+        </>
+      )}
+    </StyledBudgetCard>
   );
 };

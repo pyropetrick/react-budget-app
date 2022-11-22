@@ -3,6 +3,7 @@ import { Title, Submit } from "../";
 import { useExpenses, useFormContext } from "../../context";
 import { IExpense, IFormData } from "../../types/types";
 import { v4 as uuidv4 } from "uuid";
+import { StyledForm, StyledInputForm } from "./styles";
 
 export const Form = () => {
   const { register, handleSubmit } = useForm<IFormData>();
@@ -11,19 +12,19 @@ export const Form = () => {
     setNewExpense({ name, price, id: uuidv4() });
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <Title label="add expense" />
-      <input
+      <StyledInputForm
         {...register("name", { required: true })}
         type="text"
         placeholder="enter name ..."
       />
-      <input
+      <StyledInputForm
         {...register("price", { required: true })}
         type="number"
         placeholder="enter cost ..."
       />
       <Submit />
-    </form>
+    </StyledForm>
   );
 };

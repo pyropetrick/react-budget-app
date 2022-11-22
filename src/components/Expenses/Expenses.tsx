@@ -1,11 +1,12 @@
 import { Search, Title, List } from "../";
+import { StyledExpenses } from "./styles";
 
 export const Expenses = () => {
   return (
-    <div>
+    <StyledExpenses>
       <Title label="expenses" />
       <Search />
       <List />
-    </div>
+    </StyledExpenses>
   );
 };

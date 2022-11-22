@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const StyledExpenses = styled.div`
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  padding: 30px 20px;
+  gap: 30px;
+  margin-bottom: 30px;
 `;

@@ -1,13 +1,16 @@
 import { CustomSelect, Title, BudgetCard, RemainingCard, SpentCard } from "../";
+import { StyledBudget, StyledHead } from "./styles";
 
 export const Budget = () => {
   return (
-    <div>
-      <CustomSelect />
-      <Title label="budget app" />
+    <StyledBudget>
+      <StyledHead>
+        <Title label="budget app" />
+        <CustomSelect />
+      </StyledHead>
       <BudgetCard />
       <RemainingCard />
       <SpentCard />
-    </div>
+    </StyledBudget>
   );
 };

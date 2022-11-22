@@ -1,13 +1,14 @@
 import { useExpenses, useFormContext } from "../../context";
 import { ListItem } from "../ListItem/ListItem";
+import { StyledList } from "./styles";
 
 export const List = () => {
-  const { filteredExpense } = useExpenses();
+  const { expenses } = useExpenses();
   return (
-    <ul>
-      {filteredExpense.map(({ name, price, id }) => (
+    <StyledList>
+      {expenses.map(({ name, price, id }) => (
         <ListItem key={id} name={name} price={price} />
       ))}
-    </ul>
+    </StyledList>
   );
 };

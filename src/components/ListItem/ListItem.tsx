@@ -1,3 +1,4 @@
+import { StyledItemBadge, StyledItemDelete, StyledItemText, StyledListItem } from "./styles";
 interface IProps {
   name: string;
   price: number;
@@ -5,8 +6,10 @@ interface IProps {
 
 export const ListItem = ({ name, price }: IProps) => {
   return (
-    <li>
-      {name} {price}
-    </li>
+    <StyledListItem>
+      <StyledItemText>{name}</StyledItemText>
+      <StyledItemBadge>${price}</StyledItemBadge>
+      <StyledItemDelete>X</StyledItemDelete>
+    </StyledListItem>
   );
 };

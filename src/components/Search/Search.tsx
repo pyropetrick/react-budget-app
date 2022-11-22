@@ -1,10 +1,11 @@
 import { ChangeEvent } from "react";
 import { useExpenses } from "../../context";
+import { useInput } from "../../hooks/useInput";
+import { StyledSearch } from "./styles";
 
 export const Search = () => {
   const { searchExpense } = useExpenses();
+  const search = useInput<string>("");
 
-  const handleSearch = (event: ChangeEvent<HTMLInputElement>) => searchExpense(event.target.value);
-
-  return <input type="search" onChange={handleSearch} />;
+  return <StyledSearch placeholder="search ..." type="search" {...search} />;
 };
