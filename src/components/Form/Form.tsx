@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Title, Submit } from "../";
 import { useExpenses } from "../../context";
-import { IExpense, IFormData } from "../../types/types";
+import { IFormData } from "../../types/types";
 import { v4 as uuidv4 } from "uuid";
 import { StyledForm, StyledInputForm } from "./styles";
 

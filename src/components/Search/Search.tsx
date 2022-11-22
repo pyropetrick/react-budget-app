@@ -1,4 +1,3 @@
-import { ChangeEvent } from "react";
 import { useExpenses } from "../../context";
 import { useInput } from "../../hooks/useInput";
 import { StyledSearch } from "./styles";

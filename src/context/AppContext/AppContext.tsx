@@ -1,19 +1,16 @@
-import {
-  AppContext,
-  BudgetContextProvider,
-  CurrencyContextProvider,
-  ExpensesContextProvider,
-} from "..";
-import { IChildrenContext } from "../../types/types";
+interface IProps {
+  components: Array<React.JSXElementConstructor<React.PropsWithChildren<any>>>;
+  children: React.ReactNode;
+}
 
-export const AppContextProvider = ({ children }: IChildrenContext) => {
+export const AppContextProvider = (props: IProps) => {
+  const { components = [], children } = props;
+
   return (
-    <AppContext.Provider value={null}>
-      <BudgetContextProvider>
-        <CurrencyContextProvider>
-          <ExpensesContextProvider>{children}</ExpensesContextProvider>
-        </CurrencyContextProvider>
-      </BudgetContextProvider>
-    </AppContext.Provider>
+    <>
+      {components.reduceRight((acc, Comp) => {
+        return <Comp>{acc}</Comp>;
+      }, children)}
+    </>
   );
 };
