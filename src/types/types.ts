@@ -8,8 +8,6 @@ export interface IExpense {
 export interface IBudgetContext {
   budget: number;
   setBudget: (value: number) => void;
-  currency: string;
-  setCurrency: (value: string) => void;
 }
 export interface IExpenseContext {
   expenses: IExpense[] | [];
@@ -18,11 +16,9 @@ export interface IExpenseContext {
   deleteExpense: (id: string) => void;
   searchExpense: (name: string) => void;
 }
-export interface IFormContext {
-  name: string;
-  setName: (value: string) => void;
-  price: number;
-  setPrice: (value: number) => void;
+export interface ICurrencyContext {
+  currency: string;
+  setCurrency: (value: string) => void;
 }
 export interface ISelectOption {
   value: string;

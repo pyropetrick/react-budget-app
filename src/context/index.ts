@@ -7,5 +7,5 @@ export * from "./BudgetContext/index";
 export * from "./ExpensesContext/ExpensesContext";
 export * from "./ExpensesContext/index";
 
-export * from "./FormContext/FormContext";
-export * from "./FormContext/index";
+export * from "./CurrencyContext/CurrencyContext";
+export * from "./CurrencyContext/index";

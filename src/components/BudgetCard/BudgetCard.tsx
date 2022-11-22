@@ -1,8 +1,9 @@
-import { useBudget } from "../../context";
+import { useBudget, useCurrencyContext } from "../../context";
 import { StyledBudgetCard, StyledButton, StyledInput, StyledText } from "./styles";
 
 export const BudgetCard = () => {
-  const { setBudget, budget, currency } = useBudget();
+  const { setBudget, budget } = useBudget();
+  const { currency } = useCurrencyContext();
   const handleInput = (event: any) => {
     setBudget(event.target.value);
   };

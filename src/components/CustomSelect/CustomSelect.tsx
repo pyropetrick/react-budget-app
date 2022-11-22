@@ -1,11 +1,11 @@
 import Select, { ActionMeta, OnChangeValue } from "react-select";
 import { Currency } from "../../config/currency";
-import { useBudget } from "../../context";
+import { useCurrencyContext } from "../../context";
 import { ISelectOption } from "../../types/types";
 import { selectStyles } from "./styles";
 
 export const CustomSelect = () => {
-  const { setCurrency, currency } = useBudget();
+  const { setCurrency, currency } = useCurrencyContext();
   const options: ISelectOption[] = [
     { value: Currency.BYN, label: "BYN" },
     { value: Currency.USD, label: "USD" },

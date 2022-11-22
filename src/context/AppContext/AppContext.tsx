@@ -1,8 +1,8 @@
 import {
   AppContext,
   BudgetContextProvider,
+  CurrencyContextProvider,
   ExpensesContextProvider,
-  FormContextProvider,
 } from "..";
 import { IChildrenContext } from "../../types/types";
 
@@ -10,9 +10,9 @@ export const AppContextProvider = ({ children }: IChildrenContext) => {
   return (
     <AppContext.Provider value={null}>
       <BudgetContextProvider>
-        <FormContextProvider>
+        <CurrencyContextProvider>
           <ExpensesContextProvider>{children}</ExpensesContextProvider>
-        </FormContextProvider>
+        </CurrencyContextProvider>
       </BudgetContextProvider>
     </AppContext.Provider>
   );
