@@ -6,4 +6,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   padding: 30px 20px;
   width: 500px;
+  @media (max-width: 390px) {
+    width: 300px;
+  }
 `;

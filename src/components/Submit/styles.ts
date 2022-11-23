@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors } from "../../config/colors";
+import { Colors } from "../../config";
 
 export const StyledSubmit = styled.button`
   padding: 15px 0;

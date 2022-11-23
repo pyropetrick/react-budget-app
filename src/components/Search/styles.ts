@@ -11,4 +11,8 @@ export const StyledSearch = styled.input`
   &:focus-visible {
     outline: none;
   }
+  @media (max-width: 390px) {
+    font-size: 12px;
+    padding: 13px 10px;
+  }
 `;

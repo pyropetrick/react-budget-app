@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  gap: 15px;
 `;
 
 export const StyledInputForm = styled.input`
@@ -10,11 +11,14 @@ export const StyledInputForm = styled.input`
   border-radius: 10px;
   border: none;
   padding: 20px 15px;
-  margin-bottom: 20px;
   &::placeholder {
     color: #999999;
   }
   &:focus-visible {
     outline: none;
+  }
+  @media (max-width: 390px) {
+    font-size: 12px;
+    padding: 13px 10px;
   }
 `;

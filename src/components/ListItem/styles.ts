@@ -8,6 +8,10 @@ export const StyledListItem = styled.li`
   padding: 15px 20px;
   align-items: center;
   border-bottom: 2px solid #ccd5ff;
+  @media (max-width: 390px) {
+    font-size: 12px;
+    padding: 12px 15px;
+  }
 `;
 
 export const StyledItemText = styled.p`
@@ -26,5 +30,26 @@ export const StyledItemBadge = styled.span`
 
 export const StyledItemDelete = styled.span`
   justify-self: center;
-  color: red;
+  display: block;
+  width: 10px;
+  height: 10px;
+  --weight: 1px;
+  --aa: 1px; /* anti-aliasing */
+  --color: red;
+  border-radius: 3px;
+  background: linear-gradient(
+      45deg,
+      transparent calc(50% - var(--weight) - var(--aa)),
+      var(--color) calc(50% - var(--weight)),
+      var(--color) calc(50% + var(--weight)),
+      transparent calc(50% + var(--weight) + var(--aa))
+    ),
+    linear-gradient(
+      -45deg,
+      transparent calc(50% - var(--weight) - var(--aa)),
+      var(--color) calc(50% - var(--weight)),
+      var(--color) calc(50% + var(--weight)),
+      transparent calc(50% + var(--weight) + var(--aa))
+    );
+  cursor: pointer;
 `;

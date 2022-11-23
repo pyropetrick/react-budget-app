@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { useExpenses } from "../../context";
-import { ListItem } from "../ListItem/ListItem";
+import { useExpensesContext } from "../../context";
+import { ListItem } from "../";
 import { StyledList } from "./styles";
 
 export const List = () => {
-  const { expenses, searchValue } = useExpenses();
+  const { expenses, searchValue } = useExpensesContext();
   const [filteredExpenses, setFilteredExpenses] = useState(expenses);
   useEffect(() => {
     setFilteredExpenses(expenses.filter((exp) => exp.name.toLowerCase().includes(searchValue)));

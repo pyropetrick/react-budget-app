@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CurrencyContext } from "..";
-import { Currency } from "../../config/currency";
+import { Currency } from "../../config";
 import { IChildrenContext, ICurrencyContext } from "../../types/types";
 
 export const CurrencyContextProvider = ({ children }: IChildrenContext) => {

@@ -1,9 +1,9 @@
-import { useBudget, useCurrencyContext } from "../../context";
+import { useBudgetContext, useCurrencyContext } from "../../context";
 import { StyledRemainingCard } from "./styles";
 
 export const RemainingCard = () => {
   const { currency } = useCurrencyContext();
-  const { remaining } = useBudget();
+  const { remaining } = useBudgetContext();
   if (remaining < 0) {
     return (
       <StyledRemainingCard danger>

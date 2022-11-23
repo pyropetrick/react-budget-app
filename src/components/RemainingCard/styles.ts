@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors } from "../../config/colors";
+import { Colors } from "../../config";
 
 interface IProps {
   danger?: boolean;
@@ -13,4 +13,7 @@ export const StyledRemainingCard = styled.div`
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 20px;
+  @media (max-width: 390px) {
+    font-size: 16px;
+  }
 `;

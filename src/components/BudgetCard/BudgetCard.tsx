@@ -1,26 +1,35 @@
-import { useBudget, useCurrencyContext } from "../../context";
-import { useInput } from "../../hooks/useInput";
+import { useEffect, useState } from "react";
+import { useBudgetContext, useCurrencyContext } from "../../context";
+import { useInput, useToogle } from "../../hooks/";
 import { StyledBudgetCard, StyledButton, StyledInput, StyledText } from "./styles";
-import { useToogle } from "../../hooks/useToogle";
+import { useDebounce } from "../../hooks/useDebounce";
 
 export const BudgetCard = () => {
-  const { setBudget, budget, setRemaining } = useBudget();
+  const { setBudget, budget, setRemaining } = useBudgetContext();
   const { currency } = useCurrencyContext();
   const inputBudget = useInput();
-  const [isBudgetActive, setBudgetActive] = useToogle();
+  const [isBudgetActive, toogleBudgetActive] = useToogle();
+  const [isDisableSave, setDisableSave] = useState<boolean>(true);
   const handleSave = () => {
     setBudget(+inputBudget.value);
     setRemaining();
-    setBudgetActive();
+    toogleBudgetActive();
   };
-  const handleEdit = () => setBudgetActive();
+  const handleEdit = () => toogleBudgetActive();
+  const debounceBudget = useDebounce(inputBudget.value, 500);
+  useEffect(
+    () => (debounceBudget && +debounceBudget > 0 ? setDisableSave(false) : setDisableSave(true)),
+    [debounceBudget],
+  );
 
   return (
     <StyledBudgetCard>
       {!isBudgetActive ? (
         <>
           <StyledInput {...inputBudget} placeholder="Enter Budget ..." type="number" />
-          <StyledButton onClick={handleSave}>Save</StyledButton>
+          <StyledButton onClick={handleSave} disabled={isDisableSave}>
+            Save
+          </StyledButton>
         </>
       ) : (
         <>
