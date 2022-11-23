@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Currency } from "../config";
 
 export interface IExpense {
   name: string;
@@ -21,12 +22,13 @@ export interface IExpenseContext {
   searchExpense: (name: string) => void;
 }
 export interface ICurrencyContext {
-  currency: string;
-  setCurrency: (value: string) => void;
+  currentCurrency: ICurrencyOption;
+  currencies: ICurrencyOption[];
+  setCurrency: (option: ICurrencyOption) => void;
 }
-export interface ISelectOption {
-  value: string;
-  label: string;
+export interface ICurrencyOption {
+  value: Currency;
+  label: keyof typeof Currency;
 }
 
 export interface IFormData {

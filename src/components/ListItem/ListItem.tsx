@@ -7,7 +7,7 @@ interface IProps {
 }
 
 export const ListItem = ({ name, price, id }: IProps) => {
-  const { currency } = useCurrencyContext();
+  const { currentCurrency } = useCurrencyContext();
   const { deleteExpense } = useExpensesContext();
   const handleDelete = () => {
     deleteExpense(id);
@@ -16,7 +16,7 @@ export const ListItem = ({ name, price, id }: IProps) => {
     <StyledListItem>
       <StyledItemText>{name}</StyledItemText>
       <StyledItemBadge>
-        {currency}
+        {currentCurrency.value}
         {price}
       </StyledItemBadge>
       <StyledItemDelete onClick={handleDelete} />

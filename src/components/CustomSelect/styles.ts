@@ -1,7 +1,7 @@
 import { StylesConfig } from "react-select";
-import { ISelectOption } from "../../types/types";
+import { ICurrencyOption } from "../../types/types";
 
-export const selectStyles: StylesConfig<ISelectOption> = {
+export const selectStyles: StylesConfig<ICurrencyOption> = {
   control: (styles) => ({
     ...styles,
     fontSize: "12px",
