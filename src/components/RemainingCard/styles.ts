@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { Colors } from "../../config";
+import { Color } from "../../config";
 
 interface IProps {
   danger?: boolean;
 }
 
 export const StyledRemainingCard = styled.div`
-  background-color: ${(props: IProps) => (props.danger ? Colors.Red : Colors.Viol)};
+  background-color: ${(props: IProps) => (props.danger ? Color.Red : Color.Viol)};
   color: ${(props: IProps) => (props.danger ? "#FFF" : "black")};
   border-radius: 10px;
   padding: 15px 20px;

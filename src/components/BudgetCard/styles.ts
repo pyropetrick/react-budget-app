@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { Colors } from "../../config";
+import { Color } from "../../config";
 
 export const StyledBudgetCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 50px;
-  background-color: ${Colors.Blue};
+  background-color: ${Color.Blue};
   border-radius: 10px;
   padding: 15px 20px;
   margin-bottom: 20px;

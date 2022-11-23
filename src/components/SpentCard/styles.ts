@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Colors } from "../../config";
+import { Color } from "../../config";
 
 export const StyledSpentCard = styled.div`
-  background-color: ${Colors.Pink};
+  background-color: ${Color.Pink};
   border-radius: 10px;
   padding: 15px 20px;
   font-size: 20px;

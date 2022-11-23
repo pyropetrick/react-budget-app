@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors } from "../../config/colors";
+import { Color } from "../../config/color";
 
 export const StyledListItem = styled.li`
   display: grid;
@@ -21,7 +21,7 @@ export const StyledItemText = styled.p`
 
 export const StyledItemBadge = styled.span`
   justify-self: center;
-  background-color: ${Colors.DarkBlue};
+  background-color: ${Color.DarkBlue};
   border-radius: 10px;
   padding: 3px 10px;
   font-size: 12px;
