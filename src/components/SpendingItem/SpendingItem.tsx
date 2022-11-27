@@ -6,7 +6,7 @@ interface IProps {
   id: string;
 }
 
-export const ListItem = ({ name, price, id }: IProps) => {
+export const SpendingItem = ({ name, price, id }: IProps) => {
   const { currentCurrency } = useCurrencyContext();
   const { deleteExpense } = useExpensesContext();
   const handleDelete = () => {
