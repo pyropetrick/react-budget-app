@@ -1,4 +1,4 @@
-import { Search, Title, List } from "../";
+import { Search, Title, SpendingList } from "../";
 import { StyledExpenses } from "./styles";
 
 export const Expenses = () => {
@@ -6,7 +6,7 @@ export const Expenses = () => {
     <StyledExpenses>
       <Title label="expenses" />
       <Search />
-      <List />
+      <SpendingList />
     </StyledExpenses>
   );
 };
