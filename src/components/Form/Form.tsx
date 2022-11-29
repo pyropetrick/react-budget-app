@@ -13,12 +13,10 @@ export const Form = () => {
     formState: { errors },
   } = useForm<IFormData>({ mode: "onBlur" });
   const { setNewExpense } = useExpensesContext();
-  const { setRemaining, setSpending, budget } = useBudgetContext();
+  const { budget } = useBudgetContext();
   const onSubmit: SubmitHandler<IFormData> = ({ name, price }) => {
     if (budget > 0) {
       setNewExpense({ name, price, id: v4() });
-      setSpending(+price);
-      setRemaining();
       reset();
     }
   };

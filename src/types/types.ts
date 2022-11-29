@@ -8,10 +8,6 @@ export interface IExpense {
 }
 export interface IBudgetContext {
   budget: number;
-  remaining: number;
-  spending: number;
-  setRemaining: () => void;
-  setSpending: (value: number) => void;
   setBudget: (value: number) => void;
 }
 export interface IExpenseContext {

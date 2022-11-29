@@ -16,6 +16,7 @@ export const CustomSelect = () => {
       value={currentCurrency}
       onChange={handleSelect}
       isMulti={false}
+      isSearchable={false}
     />
   );
 };
