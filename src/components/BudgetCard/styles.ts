@@ -8,7 +8,7 @@ export const StyledBudgetCard = styled.div`
   gap: 50px;
   background-color: ${Color.Blue};
   border-radius: 10px;
-  padding: 15px 20px;
+  padding: 20px;
   margin-bottom: 20px;
 `;
 
@@ -23,6 +23,9 @@ export const StyledInput = styled.input`
   }
   &:focus-visible {
     outline: none;
+  }
+  ::-webkit-inner-spin-button {
+    display: none;
   }
 `;
 

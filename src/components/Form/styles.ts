@@ -17,6 +17,9 @@ export const StyledInputForm = styled.input`
   &:focus-visible {
     outline: none;
   }
+  ::-webkit-inner-spin-button {
+    display: none;
+  }
   @media (max-width: 390px) {
     font-size: 12px;
     padding: 13px 10px;

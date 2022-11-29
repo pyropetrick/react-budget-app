@@ -1,12 +1,12 @@
 import { Budget, Expenses, Form } from "./components";
-import { Wrapper } from "./wrapper";
+import { AppWrapper } from "./globalStyles";
 
 export const App = () => {
   return (
-    <Wrapper>
+    <AppWrapper>
       <Budget />
       <Expenses />
       <Form />
-    </Wrapper>
+    </AppWrapper>
   );
 };

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
@@ -63,4 +63,15 @@ body {
   background-color: #f4f4f4;
   font-family: 'Roboto', sans-serif;
 }
+`;
+
+export const AppWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 20px;
+  width: 500px;
+  @media (max-width: 390px) {
+    width: 300px;
+  }
 `;
