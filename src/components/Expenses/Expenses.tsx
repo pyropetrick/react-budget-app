@@ -8,7 +8,7 @@ import { StyledExpenses } from "./styles";
 export const Expenses = () => {
   const search = useInput();
   const { expenses } = useExpensesContext();
-  const [filteredExpenses, setFilteredExpenses] = useState<IExpense[]>([]);
+  const [filteredExpenses, setFilteredExpenses] = useState<IExpense[]>(expenses);
   const debounceValue = useDebounce<string>(search.value, 700);
 
   useEffect(() => {
